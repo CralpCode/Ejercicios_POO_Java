@@ -2,23 +2,22 @@ package Cuadadrado;
 
 public class Cuadrado {
 
-    public static void main(String[] args) {
-        Cuadrado cuadrado1 = new Cuadrado(5);
-        cuadrado1.Area();
-        System.out.println(cuadrado1.getLado());
-        cuadrado1.setLado(5);        
-        cuadrado1.Perimetro();
-        System.out.println(cuadrado1.getLado());
-    }
-
     private static int lado;
+    private static int AreaC;
+    private static int PerimetroC;
 
     public Cuadrado(){
         this.lado = 0;
+        this.AreaC = 0;
+        this.PerimetroC = 0;
     }
 
     public Cuadrado(int LadoC){
         this.lado = LadoC;
+    }
+
+    public Cuadrado(Cuadrado objCuadrado){
+        this.lado = objCuadrado.lado;
     }
 
     public int getLado(){
@@ -30,13 +29,21 @@ public class Cuadrado {
     }
 
     public static void Area() {
-        lado = lado * lado;
-        System.out.println("El area es " );
+        AreaC = lado * lado;
     }
 
     public static void Perimetro() {
-        lado = 4*lado;
-        System.out.println("El Perimetro es " );
+        PerimetroC = 4*lado;
+    }
+
+    public int getArea(){
+        Area();
+        return this.AreaC;
+    }
+
+    public int getPerimetro(){
+        Perimetro();
+        return this.PerimetroC;
     }
 
 }

@@ -1,19 +1,20 @@
 package Circulo;
 
 public class Circulo {
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         Circulo circulo1 = new Circulo(5);
-        circulo1.Area();
-        System.out.println(circulo1.getCirculo());
-        circulo1.setCirculo(5);
-        circulo1.Perimetro();
-        System.out.println(circulo1.getCirculo());
+        System.out.println(circulo1.getAreaCir());
+        System.out.println(circulo1.getPerimetroCir());
         
-    }
+    }*/
     private static double radio;
+    private static double AreaCir;
+    private static double PerimetroCir;
 
     public Circulo(){
         this.radio = 0;
+        this.AreaCir = 0;
+        this.PerimetroCir = 0;
     }
 
     public Circulo(double RadioC){
@@ -29,10 +30,18 @@ public class Circulo {
     }
 
     public void Area() {
-        radio = ((Math.PI)*(radio*radio));
+        AreaCir = ((Math.PI)*(radio*radio));
     }
 
     public void Perimetro() {
-        radio = 2*((Math.PI)*(radio));
+        PerimetroCir = 2*((Math.PI)*(radio));
+    }
+    public double getAreaCir(){
+        Area();
+        return this.AreaCir;
+    }
+    public double getPerimetroCir(){
+        Perimetro();
+        return this.PerimetroCir;
     }
 }

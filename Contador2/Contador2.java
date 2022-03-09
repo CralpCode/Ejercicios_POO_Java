@@ -1,15 +1,16 @@
 package Contador2;
 
 public class Contador2 {
-    public static void main(String[] args) {
-        Contador2 contar = new Contador2(5);
-        System.out.println(contar.getContador2());
-    }
 
     private static int Conteo;
+    private static int Incremento;
+    private static int Decremento;
+
 
     public Contador2(){
         this.Conteo = 0;
+        this.Incremento = 0;
+        this.Decremento = 0;
     }
 
     public Contador2(int Conteo){
@@ -29,10 +30,47 @@ public class Contador2 {
     }
 
     public static void Incrementacion() {
-        Conteo = Conteo + 1;
+        if (Conteo > 0) {
+            for (int i = 1; i <=Conteo; i++) {
+                Incremento = Incremento + 1;
+            }
+            Conteo = 0;
+        }
+        else{
+            if (Decremento > 0) {
+                Incremento = Decremento + 1;
+            }
+            Incremento = Incremento + 1;
+        }
     }
 
     public static void Disminucion() {
-        Conteo = Conteo - 1;
+        if (Conteo > 0) {
+            for (int i = 0; i <= Conteo; i++) {
+                Decremento = Decremento - 1;
+            }
+            Conteo = 0;
+        }
+        else{
+            if (Incremento > 0) {
+                Decremento = Incremento - 1;
+            }
+            else{
+                Decremento = Decremento - 1;
+            }
+        }
     }
+
+    public int getIncremento() {
+        Incrementacion();
+        return this.Incremento;
+    }
+
+    public int getDecremento() {
+        Disminucion();
+        return this.Decremento;
+    }
+
 }
+
+

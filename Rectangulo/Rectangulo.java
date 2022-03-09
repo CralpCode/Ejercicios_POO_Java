@@ -4,16 +4,15 @@ public class Rectangulo {
 
     private static int ancho;
     private static int alto;
-    static int A = 0;
-    static int P = 0;
+    private static int A = 0;
+    private static int P = 0;
 
-    public static void main(String[] args) {
+   /* public static void main(String[] args) {
         Rectangulo rectangulo1 = new Rectangulo(5,2);
-        rectangulo1.Area();
-        System.out.println(A);
-        rectangulo1.Perimetro();
-        System.out.println(P);
-    }
+
+        System.out.println(rectangulo1.getAreaR());
+        System.out.println(rectangulo1.getPerimetro());
+    }*/
 
     public Rectangulo(){
         this.ancho = 0;
@@ -39,14 +38,31 @@ public class Rectangulo {
         return this.alto = alt;
     }
 
+    public int getAncho(){
+        return this.ancho;
+    }
+
+    public int setAncho(int anc) {
+        return this.ancho = anc;
+    }
+
+
     public static void Area() {
-        A = 0;
         A = alto * ancho;
     }
 
     public static void Perimetro() {
-        P = 0;
         P = (2*alto) +(2*ancho) ;
+    }
+
+    public int getAreaR(){
+        Area();
+        return this.A;
+    }
+
+    public int getPerimetro(){
+        Perimetro();
+        return this.P;
     }
 
 }
