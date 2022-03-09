@@ -5,6 +5,7 @@ import Contador.Contador;
 import Contador2.Contador2;
 import Cuadadrado.Cuadrado;
 import Fraccion.Fraccion;
+import Libro.Libro;
 import Rectangulo.Rectangulo;
 
 public class Principal {
@@ -62,6 +63,18 @@ public class Principal {
         System.out.println("La resta de fracciones es  " + fraccion1.getResta());
         System.out.println("La multiplicacion de fracciones es  " + fraccion1.getMultiplicar());
         System.out.println("La division de fracciones es  " + fraccion1.getDividir());
+        System.out.println("*******************************************\n");
+    
+        Libro libro1 = new Libro(2);
+        Libro Lib2 = libro1;
+        Lib2.setMes(1);
+        System.out.println("*******************Libro****************");
+        System.out.println("Estado de prestamo:");
+        libro1.Prestamo();
+        System.out.println("Informacion del libro:");
+        libro1.mostrarInformacion();
+        System.out.println("Estado de devolucion:");
+        libro1.Devolucion();
         System.out.println("*******************************************\n");
     }
 }
